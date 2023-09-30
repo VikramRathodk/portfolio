@@ -12,7 +12,6 @@ class UserProfile extends StatelessWidget {
         preferredSize: Size.fromHeight(80),
         child: MyAppBar(
           title: 'Profile',
-          icon: Icons.home,
         ),
       ),
       drawer: MyDrawer(),

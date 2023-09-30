@@ -20,7 +20,6 @@ class _TabletScafoldState extends State<TabletScafold> {
         preferredSize: Size.fromHeight(80),
         child: MyAppBar(
           title: 'TAblet  view',
-          icon: Icons.home,
         ),
       ),
       backgroundColor: const Color.fromARGB(255, 228, 223, 185),

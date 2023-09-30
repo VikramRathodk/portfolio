@@ -16,9 +16,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return ResponsiveLayout(
-      mobileScafold:  MobileScaffold(),
+      mobileScafold: MobileScaffold(),
       tabletScafold: TabletScafold(),
       destopScafold: DesktopScafold(),
     );
   }
 }
+
+
+

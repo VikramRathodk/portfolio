@@ -18,7 +18,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80),
-        child: MyAppBar(title: 'Mobile view', icon: Icons.home),
+        child: MyAppBar(title: 'Mobile view'),
       ),
       backgroundColor: Color.fromARGB(255, 168, 150, 10),
       drawer: MyDrawer(),
