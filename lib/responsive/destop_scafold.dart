@@ -35,9 +35,9 @@ class _DesktopScafoldState extends State<DesktopScafold> {
     );
     List<String> imageList = [
       '../assets/images/profile.jpg',
-      '../assets/images/profile.jpg',
-      '../assets/images/profile.jpg',
-      '../assets/images/profile.jpg',
+      '../assets/images/profile2.jpg',
+      '../assets/images/profile3.jpg',
+      '../assets/images/profile4.jpg',
     ];
 
     return Scaffold(
