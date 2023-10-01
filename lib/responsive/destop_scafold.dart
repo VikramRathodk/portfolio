@@ -181,8 +181,8 @@ class _DesktopScafoldState extends State<DesktopScafold> {
                           ),
                           SizedBox(height: 40.0),
                           AnimatedButton(
-                            height: 70,
-                            width: 200,
+                            height: 50,
+                            width: 250,
                             text: 'Download Resume',
                             isReverse: true,
                             selectedTextColor: Colors.black,
@@ -190,10 +190,12 @@ class _DesktopScafoldState extends State<DesktopScafold> {
                             animationDuration: Duration(seconds: 1),
                             backgroundColor: Colors.black,
                             borderColor: Colors.white,
-                            borderRadius: 50,
+                            borderRadius: 20,
                             borderWidth: 2,
                             onPress: () {
-                              _launchUrl();
+                              Future.delayed(Duration(seconds: 1), () {
+                                _launchUrl();
+                              });
                             },
                           ),
                         ],
