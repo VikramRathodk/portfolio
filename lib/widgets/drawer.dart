@@ -5,22 +5,20 @@ import 'package:portfolio_vikram/widgets/drawerListItem.dart';
 
 import '../screens/project.dart';
 
-
 class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     return Drawer(
       child: Column(
         children: [
           DrawerHeader(
             child: Icon(Icons.favorite),
           ),
-          DrawerListItem(
-            icon: Icons.home,
-            title: "H O M E",
-            route: MaterialPageRoute(builder: (context) => HomePage()),
-          ),
+          // DrawerListItem(
+          //   icon: Icons.home,
+          //   title: "H O M E",
+          //   route: MaterialPageRoute(builder: (context) => HomePage()),
+          // ),
           DrawerListItem(
             icon: Icons.settings,
             title: "P R O J E C T S",
@@ -31,7 +29,7 @@ class MyDrawer extends StatelessWidget {
             title: "B L O G ",
             route: MaterialPageRoute(builder: (context) => Blog()),
           ),
-          
+
           DrawerListItem(
             icon: Icons.logout,
             title: "S O C I A L S",
