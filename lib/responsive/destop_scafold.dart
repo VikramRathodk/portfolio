@@ -9,6 +9,7 @@ import 'package:portfolio_vikram/widgets/myappBar.dart';
 import 'package:portfolio_vikram/widgets/sizeBox_container.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../screens/project.dart';
 
@@ -39,6 +40,14 @@ class _DesktopScafoldState extends State<DesktopScafold> {
       '../assets/images/profile3.jpg',
       '../assets/images/profile4.jpg',
     ];
+    final Uri _url = Uri.parse(
+        'https://vikramresume.s3.ap-south-1.amazonaws.com/Vikram_Rathod_MCA_24.pdf');
+
+    Future<void> _launchUrl() async {
+      if (!await launchUrl(_url)) {
+        throw Exception('Could not launch $_url');
+      }
+    }
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -86,7 +95,7 @@ class _DesktopScafoldState extends State<DesktopScafold> {
                           //         AssetImage('../assets/images/profile.jpg'),
                           //   ),
                           // ),
-                         /* AvatarGlow(
+                          /* AvatarGlow(
                             endRadius:
                                 200.0, // Adjust the endRadius for the desired glow size
                             child: Material(
@@ -108,12 +117,11 @@ class _DesktopScafoldState extends State<DesktopScafold> {
                           )
                           */
                           SizedBox(
-                            height: 550, 
-                            width: 450, 
+                            height: 550,
+                            width: 450,
                             child: FanCarouselImageSlider(
                               expandedCloseBtnDecoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0)
-                              ),
+                                  borderRadius: BorderRadius.circular(10.0)),
                               imagesLink: imageList,
                               isAssets: false,
                             ),
@@ -184,7 +192,9 @@ class _DesktopScafoldState extends State<DesktopScafold> {
                             borderColor: Colors.white,
                             borderRadius: 50,
                             borderWidth: 2,
-                            onPress: () {},
+                            onPress: () {
+                              _launchUrl();
+                            },
                           ),
                         ],
                       ),
