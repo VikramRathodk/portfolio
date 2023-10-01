@@ -162,15 +162,87 @@ class _ProjectsState extends State<Projects> with TickerProviderStateMixin {
     }
 
     return ListView.builder(
+      
       itemCount: currentTabProjects.length,
       itemBuilder: (context, index) {
-        return ListTile(
-          leading: Image.asset(
-            currentTabProjects[index].assetImagePath,
+        return Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
           ),
-          title: Text(currentTabProjects[index].title),
-          subtitle: Text(currentTabProjects[index].description),
-          trailing: Icon(Icons.arrow_forward),
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Image.asset(
+                currentTabProjects[index].assetImagePath, // Use your image asset path
+                height: 200,
+                width: 200,
+                fit: BoxFit.cover,
+              ),
+              Container(
+                padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      currentTabProjects[index].title,
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.grey[800],
+                      ),
+                    ),
+                    Container(height: 10),
+                    SizedBox(
+                      width: 300,
+                      child: Text(
+                        currentTabProjects[index].description,
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey[700],
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Spacer(),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets
+                                .zero, // Added padding to the TextButton
+                            backgroundColor:
+                                Colors.transparent, // Added a background color
+                          ),
+                          child: Text(
+                            "SHARE",
+                            style: TextStyle(
+                              color: Colors.blue, // Change this color as needed
+                            ),
+                          ),
+                          onPressed: () {},
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets
+                                .zero, // Added padding to the TextButton
+                            backgroundColor:
+                                Colors.transparent, // Added a background color
+                          ),
+                          child: Text(
+                            "EXPLORE",
+                            style: TextStyle(
+                              color: Colors.blue, // Change this color as needed
+                            ),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Container(height: 5),
+            ],
+          ),
         );
       },
     );
